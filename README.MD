@@ -10,7 +10,7 @@ Jobs / Internships RAG system for Egyptian market
 ### 1. Clone
 git clone https://github.com/Hazem-nabil42/Jobs-Internships-Hybrid-RAG-finder.git
 cd Jobs-Internships-Hybrid-RAG-finder
-
+<span style="color:red;">awdawdawd</span>
 ### 2. Setup (مرة واحدة بس)
 python setup.py
 
