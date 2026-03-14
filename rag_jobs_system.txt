@@ -4,6 +4,6 @@ Priority 1 — Core Features:
 about 1800 job in database with mb25 indexing keywords
 
 Priority 2 — CV Matching:
-⬜ PDF/Word upload
-⬜ Skills extraction
-⬜ Match % لكل وظيفة
+✅ PDF/Word upload
+✅ Skills extraction
+✅ Match % لكل وظيفة
