@@ -1,0 +1,26 @@
+Priority 1 — Core Features:
+✅ Wuzzuf scraper
+✅ LinkedIn scraper
+⬜ Indeed Egypt        ← سهل وبيانات كتير
+⬜ Forasna             ← مصري بحت
+
+Priority 2 — CV Matching:
+⬜ PDF/Word upload
+⬜ Skills extraction
+⬜ Match % لكل وظيفة
+
+Priority 3 — Filters:
+⬜ البلد (مصر/دبي/ريموت)
+⬜ Work style (on-site/hybrid/remote)
+⬜ Experience level
+⬜ Job type
+
+Priority 4 — Smart Features:
+⬜ Chat history (تكمل محادثة)
+⬜ Job alerts (ابعتلي لما يجي كذا)
+⬜ Auto scheduler (scrape كل يوم)
+
+Priority 5 — Polish:
+⬜ Pagination في النتايج
+⬜ Save jobs (bookmark)
+⬜ Share job

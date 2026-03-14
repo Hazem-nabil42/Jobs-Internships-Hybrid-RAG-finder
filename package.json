@@ -1,0 +1,28 @@
+{
+  "name": "jobs-rag-egypt",
+  "version": "1.0.0",
+  "description": "npm-tailwind-jobs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Hazem-nabil42/Jobs-Internships-Hybrid-RAG-finder.git"
+  },
+  "keywords": [
+    "rag",
+    "ai",
+    "llm",
+    "jobs"
+  ],
+  "author": "hazem",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Hazem-nabil42/Jobs-Internships-Hybrid-RAG-finder/issues"
+  },
+  "homepage": "https://github.com/Hazem-nabil42/Jobs-Internships-Hybrid-RAG-finder#readme",
+  "devDependencies": {
+    "tailwindcss": "^3.4.19"
+  }
+}

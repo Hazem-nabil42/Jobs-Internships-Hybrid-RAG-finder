@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>JIRAG Project</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&family=Space+Mono&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/src/css/output.css">
+  <style>
+    body { font-family: 'Cairo', sans-serif; }
+    .mono { font-family: 'Space Mono', monospace; }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes blink  { 50% { opacity: 0; } }
+    @keyframes pulse  { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.4;transform:scale(.8)} }
+    .fade-up   { animation: fadeUp 0.4s ease both; }
+    .cursor    { display:inline-block; width:2px; height:1.1em; background:#2dd4bf; margin-right:2px; vertical-align:text-bottom; animation:blink 1s step-end infinite; }
+    .dot-pulse { animation: pulse 2s infinite; }
+  </style>
+</head>
+
+<body class="bg-[#0b1120] text-[#f1ede6] min-h-screen overflow-x-hidden">
+
+  <!-- ── Hero ── -->
+  <div class="relative text-center px-6 pt-20 pb-16 overflow-hidden">
+
+    <!-- Glow blob -->
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[500px] bg-teal-400/10 rounded-full blur-3xl pointer-events-none -z-10"></div>
+
+    <!-- Badge -->
+    <div class="mono inline-flex items-center gap-2 bg-teal-400/10 border border-teal-400/20 rounded-full px-5 py-1.5 text-xs text-teal-400 tracking-widest mb-7">
+      <span class="dot-pulse w-2 h-2 bg-teal-400 rounded-full inline-block"></span>
+      AI-Powered Job Search
+    </div>
+
+    <!-- Title -->
+    <h1 class="text-6xl md:text-8xl font-black leading-tight p-4 mb-10 bg-gradient-to-br from-[#f1ede6] to-teal-400 bg-clip-text text-transparent">
+      JIRAG
+    </h1>
+    <p class="text-slate-400 font-light text-lg mb-12">
+      Jobs / Internships RAG system for Egyptian market
+    </p>
+
+    <!-- Search -->
+    <div class="relative max-w-2xl mx-auto z-10">
+      <div class="flex bg-[#161f30] border border-[#1e2d42] rounded-2xl overflow-hidden transition-all duration-300 focus-within:border-teal-400 focus-within:shadow-[0_0_0_4px_rgba(45,212,191,0.08)]">
+        <input
+          type="text"
+          id="queryInput"
+          placeholder="مثال: عايز وظيفة python developer في القاهرة..."
+          onkeydown="if(event.key==='Enter') search()"
+          class="flex-1 bg-transparent border-none outline-none px-6 py-5 text-base text-[#f1ede6] placeholder-slate-500"
+          style="font-family:'Cairo',sans-serif"
+        />
+        <button
+          onclick="search()"
+          class="bg-teal-400 hover:bg-teal-500 active:bg-teal-600 text-[#0b1120] font-bold px-8 text-base transition-colors duration-200 whitespace-nowrap"
+          style="font-family:'Cairo',sans-serif"
+        >
+          بحث ←
+        </button>
+      </div>
+
+      <!-- Quick chips -->
+      <div class="flex flex-wrap gap-2 justify-center mt-4">
+        <span onclick="fillSearch('python developer cairo')"
+          class="mono cursor-pointer bg-white/[0.03] border border-[#1e2d42] hover:border-teal-400 hover:text-teal-400 rounded-full px-4 py-1 text-xs text-slate-400 transition-colors duration-200">
+          Python Developer
+        </span>
+        <span onclick="fillSearch('fresh graduate RAG jobs and automation')"
+          class="mono cursor-pointer bg-white/[0.03] border border-[#1e2d42] hover:border-teal-400 hover:text-teal-400 rounded-full px-4 py-1 text-xs text-slate-400 transition-colors duration-200">
+          fresh grad RAG jobs
+        </span>
+        <span onclick="fillSearch('data scientist machine learning')"
+          class="mono cursor-pointer bg-white/[0.03] border border-[#1e2d42] hover:border-teal-400 hover:text-teal-400 rounded-full px-4 py-1 text-xs text-slate-400 transition-colors duration-200">
+          Data Science
+        </span>
+        <span onclick="fillSearch('internships computer science')"
+          class="mono cursor-pointer bg-white/[0.03] border border-[#1e2d42] hover:border-teal-400 hover:text-teal-400 rounded-full px-4 py-1 text-xs text-slate-400 transition-colors duration-200">
+          summer internships
+        </span>
+      </div>
+    </div>
+    <!-- بعد الـ search-wrap div مباشرة -->
+    <div class="max-w-2xl mx-auto px-6 mt-4 mb-2">
+      <div class="flex items-center gap-3 my-4">
+        <span class="flex-1 h-px bg-[#1e2d42]"></span>
+        <span class="mono text-xs text-slate-500">أو</span>
+        <span class="flex-1 h-px bg-[#1e2d42]"></span>
+      </div>
+
+      <div id="cvDropzone"
+        onclick="document.getElementById('cvInput').click()"
+        class="border-2 border-dashed border-[#1e2d42] hover:border-teal-400/50 rounded-2xl p-2 text-center
+         cursor-pointer transition-all duration-300 bg-[#161f30]/50">
+        <div class="text-3xl mb-3">📄</div>
+        <div class="text-slate-300 font-semibold mb-1">ارفع الـ CV بتاعك</div>
+        <div class="text-slate-500 text-sm">PDF فقط — هنلاقيلك أنسب وظايف</div>
+        <input type="file" id="cvInput" accept=".pdf" class="hidden" onchange="uploadCV(this)"/>
+      </div>
+
+      <div id="cvStatus" class="hidden mt-3 text-center text-sm text-teal-400 mono"></div>
+    </div>
+  </div>
+
+  <!-- ── Results ── -->
+  <div class="max-w-3xl mx-auto px-6 pb-24 relative z-10">
+
+    <!-- Loading -->
+    <div id="loading" class="hidden text-center py-16">
+      <div class="w-12 h-12 border-2 border-[#1e2d42] border-t-teal-400 rounded-full animate-spin mx-auto mb-4"></div>
+      <p class="text-slate-500 text-sm">جاري البحث والتحليل...</p>
+    </div>
+
+    <!-- AI Answer -->
+    <div id="aiAnswer" class="hidden bg-[#161f30] border border-[#1e2d42] border-r-4 border-r-teal-400 rounded-2xl p-7 mb-8">
+      <div class="mono flex items-center gap-3 text-teal-400 text-xs tracking-widest mb-4">
+        <div class="w-7 h-7 bg-teal-400/10 border border-teal-400/20 rounded-lg flex items-center justify-center text-sm">🤖</div>
+        JIRAG · AI ASSISTANT
+      </div>
+      <div id="aiText" class="text-slate-300 text-sm leading-loose"></div>
+    </div>
+
+    <!-- Jobs -->
+    <div id="jobsSection" class="hidden">
+      <div class="mono flex items-center gap-3 text-xs text-slate-500 tracking-widest mb-5">
+        <span>النتائج</span>
+        <span class="flex-1 h-px bg-[#1e2d42]"></span>
+      </div>
+      <div id="jobsList"></div>
+    </div>
+
+  </div>
+
+  <script src="/src/JS/app.js"></script>
+</body>
+</html>

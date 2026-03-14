@@ -1,0 +1,9 @@
+# .gitignore
+database/chroma_db/
+database/bm25_index.pkl
+data/
+node_modules/
+__pycache__/
+*.pyc
+.env
+src/css/output.css
