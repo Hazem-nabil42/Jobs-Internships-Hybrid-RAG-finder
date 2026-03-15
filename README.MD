@@ -45,9 +45,9 @@ http://localhost:8000
 ```mermaid
 flowchart LR
     A[🔎 User Query] --> B{Hybrid Retriever}
-    B --> C[🧬 Dense Search\nSemantic Embeddings]
-    B --> D[📝 Sparse Search\nBM25 Keywords]
-    C --> E[🔀 Score Fusion\nRRF Algorithm]
+    B --> C[Vector Datavase search\nSemantic Embeddings]
+    B --> D[\nBM25 Keywords search]
+    C --> E[top 10 relevent \n vector embeddings]
     D --> E
     E --> F[📊 Re-ranker]
     F --> G[✅ Top Results]
@@ -56,56 +56,6 @@ flowchart LR
 
 ---
 
-## 📡 API Endpoints
-
-| Method | Endpoint | الوصف |
-|--------|----------|-------|
-| `GET` | `/` | الصفحة الرئيسية |
-| `POST` | `/search` | البحث عن وظائف / تدريبات |
-| `GET` | `/health` | التحقق من حالة الخادم |
-
----
-
-## 🛠️ التقنيات المستخدمة
-
-<div align="center">
-
-| الطبقة | التقنية |
-|--------|---------|
-| 🔙 Backend | FastAPI · Python 3.10+ |
-| 🎨 Frontend | HTML · Tailwind CSS |
-| 🧠 RAG Engine | LangChain · FAISS / Chroma |
-| 📐 Embeddings | Sentence-Transformers |
-| 🔍 Sparse Search | BM25 (rank_bm25) |
-| ⚡ Server | Uvicorn |
-
-</div>
-
----
-
-## 🤝 المساهمة
-
-المساهمات مرحب بها! 🙌
-
-```bash
-# 1. Fork the repo
-# 2. Create your branch
-git checkout -b feature/amazing-feature
-
-# 3. Commit your changes
-git commit -m "feat: add amazing feature"
-
-# 4. Push and open a Pull Request
-git push origin feature/amazing-feature
-```
-
----
-
-## 📄 الرخصة
-
-هذا المشروع مرخص تحت رخصة [MIT](LICENSE) — استخدمه بحرية ✨
-
----
 
 <div align="center">
 
