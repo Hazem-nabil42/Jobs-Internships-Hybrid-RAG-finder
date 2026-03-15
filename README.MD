@@ -45,7 +45,7 @@ http://localhost:8000
 ```mermaid
 flowchart LR
     A[🔎 User Query] --> B{Hybrid Retriever}
-    B --> C[Vector Datavase search\nSemantic Embeddings]
+    B --> C[Vector Database search\nSemantic Embeddings]
     B --> D[\nBM25 Keywords search]
     C --> E[top 10 relevent vector embeddings]
     D --> E
