@@ -45,9 +45,9 @@ http://localhost:8000
 ```mermaid
 flowchart LR
     A[🔎 User Query] --> B{Hybrid Retriever}
-    B --> C[Vector Database search\nSemantic Embeddings]
-    B --> D[\nBM25 Keywords search]
-    C --> E[top 10 relevent vector embeddings]
+    B --> C[🧬 Dense Search\nSemantic Embeddings]
+    B --> D[📝 Sparse Search\nBM25 Keywords]
+    C --> E[🔀 Score Fusion\nRRF Algorithm]
     D --> E
     E --> F[📊 Re-ranker]
     F --> G[✅ Top Results]
