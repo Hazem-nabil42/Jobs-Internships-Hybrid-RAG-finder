@@ -47,7 +47,7 @@ flowchart LR
     A[🔎 User Query] --> B{Hybrid Retriever}
     B --> C[Vector Datavase search\nSemantic Embeddings]
     B --> D[\nBM25 Keywords search]
-    C --> E[top 10 relevent \n vector embeddings]
+    C --> E[top 10 relevent vector embeddings]
     D --> E
     E --> F[📊 Re-ranker]
     F --> G[✅ Top Results]
