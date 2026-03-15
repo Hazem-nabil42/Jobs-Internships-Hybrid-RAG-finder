@@ -45,13 +45,13 @@ http://localhost:8000
 ```mermaid
 flowchart LR
     A[🔎 User Query] --> B{Hybrid Retriever}
-    B --> C[🧬 Dense Search\nSemantic Embeddings]
-    B --> D[📝 Sparse Search\nBM25 Keywords]
-    C --> E[🔀 Score Fusion\nRRF Algorithm]
+    B --> C[ VectorDatabse\nSemantic Embeddings]
+    B --> D[ Sparse Search\nBM25 Keywords]
+    C --> E[ Live scrapping?\n]
     D --> E
-    E --> F[📊 Re-ranker]
-    F --> G[✅ Top Results]
-    G --> H[💬 LLM Response]
+    E --> F[ Re-ranker]
+    F --> G[ Top 10 Results]
+    G --> H[ LLM Response]
 ```
  
 ---
