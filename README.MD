@@ -61,9 +61,6 @@ flowchart LR
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:2c5364,50:203a43,100:0f2027&height=120&section=footer" />
 
-**صُنع بـ ❤️ لدعم الباحثين عن عمل في مصر**
-
-⭐ إذا أعجبك المشروع، لا تنسَ تضع نجمة!
 
 [![GitHub stars](https://img.shields.io/github/stars/Hazem-nabil42/Jobs-Internships-Hybrid-RAG-finder?style=social)](https://github.com/Hazem-nabil42/Jobs-Internships-Hybrid-RAG-finder)
 
