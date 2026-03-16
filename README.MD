@@ -2,7 +2,7 @@
 
 
 
-## 🚀 تشغيل المشروع
+## تشغيل المشروع
 
 
 ### الخطوة 1 — استنساخ المشروع
@@ -12,13 +12,13 @@ git clone https://github.com/Hazem-nabil42/Jobs-Internships-Hybrid-RAG-finder.gi
 cd Jobs-Internships-Hybrid-RAG-finder
 ```
 
-### الخطوة 2 — الإعداد الأولي (مرة واحدة فقط ✅)
+### الخطوة 2 — الإعداد الأولي (مرة واحدة فقط)
 
 ```bash
 python setup.py
 ```
 
-> 📌 هذا الأمر يثبّت جميع المكتبات المطلوبة ويهيئ البيئة تلقائيًا.
+>  هذا الأمر يثبّت جميع المكتبات المطلوبة ويهيئ البيئة تلقائيًا.
 
 ### الخطوة 3 — بناء Tailwind CSS
 
@@ -32,7 +32,7 @@ npx tailwindcss -i ./src/css/input.css -o ./src/css/output.css
 uvicorn API.main:app --reload
 ```
 
-### الخطوة 5 — افتح المتصفح 🌐
+### الخطوة 5 — افتح المتصفح 
 
 ```
 http://localhost:8000
@@ -40,7 +40,7 @@ http://localhost:8000
 
 ---
 
-## 🔬 كيف يعمل النظام؟
+##  كيف يعمل النظام؟
 
 ```mermaid
 flowchart LR
